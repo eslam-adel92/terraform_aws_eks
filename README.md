@@ -1,4 +1,4 @@
-# myapp Production EKS Infrastructure
+# Production EKS Infrastructure
 
 Private AWS EKS cluster with Karpenter, WAFv2, and Secrets Manager integration.
 
