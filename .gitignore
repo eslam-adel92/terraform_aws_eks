@@ -7,6 +7,7 @@
 
 # Crash log files
 crash.log
+crash.*.log
 
 # Terraform variable files containing sensitive data
 *.tfvars
@@ -18,6 +19,9 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 
+# Ignore transient lock info files created by terraform apply
+.terraform.tfstate.lock.info
+
 # CLI configuration files
 .terraformrc
 terraform.rc
@@ -25,3 +29,5 @@ terraform.rc
 # Plan output
 *.tfplan
 *tfplan
+# VsCode settings
+.vscode/
