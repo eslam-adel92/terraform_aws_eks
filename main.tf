@@ -1,20 +1,6 @@
-terraform {
-  required_version = ">= 1.0"
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
-
-provider "aws" {
-  region = var.aws_region
-}
-
 # VPC
 module "vpc" {
-  source = "./modules/vpc"
+  source = "./modules/networking"
 
   vpc_cidr             = var.vpc_cidr
   environment          = var.environment
@@ -37,7 +23,7 @@ module "eks" {
 
 # EKS Node Group
 module "eks_node_group" {
-  source = "./modules/eks_node_group"
+  source = "./modules/eks"
 
   cluster_name    = module.eks.cluster_name
   node_group_name = var.node_group_name
